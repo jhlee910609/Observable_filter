@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     String months[] = {};
 
     public void emitData() {
+        /* test용 객체 만들기 */
         // 1월~ 12월까지의 String data를 DateFormatSymbols을 통해 얻는다.
         DateFormatSymbols dfs = new DateFormatSymbols();
         months = dfs.getMonths();
@@ -96,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
                         () -> Log.i("Complete", "Successfully complete")
                 );
     }
-
 
     public void doZip(View view) {
         observableZip
